@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestServiceApiXam.MainPage">
+
+    <StackLayout>
+        <Button Text="Get Data" Command="{Binding GetCreatorsCommand}"/>
+        <ScrollView>
+            <ListView ItemsSource="{Binding Creators}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout BackgroundColor="#eee"
+                            Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="{Binding name}"
+                                    TextColor="#f35e20" HorizontalOptions="CenterAndExpand" />
+                                    <Label Text="{Binding slug}"
+                                    HorizontalOptions="CenterAndExpand"
+                                    TextColor="#503026"  />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+    </StackLayout>
+
+</ContentPage>
